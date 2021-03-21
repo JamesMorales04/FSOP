@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TwrpJUoWuTgjGArJb5rUum3/jJMoRb790XB8Cqd9uEJX2fcNeUUP67HzZt4/TJgg9HJTvtE7jh6+MM+aYGP27g==",
+  "success": true,
+  "projectFilePath": "D:\\Usuario\\Universidad\\FSOP\\GestorArchivos\\GestorArchivos\\GestorArchivos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nicol\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
