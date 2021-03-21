@@ -22,7 +22,7 @@ namespace GestorArchivos
             Thread listener = new Thread(() => comunicationSet.StartListening(8082));
             listener.Start();
 
-            messages.Actions("{cmd:send, src:GUI, dst:GestorArc, msg:\"log->Error en App1\"}");
+            messages.Actions("{cmd:create, src:GUI, dst:GestorArc, msg:\"coso\"}");
 
            
 

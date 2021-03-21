@@ -9,3 +9,4 @@ domingo, 21 de marzo de 202105:51:56 - Error en App1
 domingo, 21 de marzo de 202105:53:01 - Error en App1
 domingo, 21 de marzo de 202105:54:16 - Error en App1
 domingo, 21 de marzo de 202105:57:48 - Error en App1
+domingo, 21 de marzo de 202106:06:44 - La carpeta coso fue creada correctamente.
