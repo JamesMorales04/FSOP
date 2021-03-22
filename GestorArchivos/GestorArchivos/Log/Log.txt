@@ -10,3 +10,7 @@ domingo, 21 de marzo de 202105:53:01 - Error en App1
 domingo, 21 de marzo de 202105:54:16 - Error en App1
 domingo, 21 de marzo de 202105:57:48 - Error en App1
 domingo, 21 de marzo de 202106:06:44 - La carpeta coso fue creada correctamente.
+lunes, 22 de marzo de 202103:46:53 - La carpeta coso ya existe.
+lunes, 22 de marzo de 202103:46:54 - cmd:send, src:GestorArc, dst:GUI, msg:"Error-> La carpeta ya existe"
+lunes, 22 de marzo de 202104:01:10 - La carpeta coso ya existe.
+lunes, 22 de marzo de 202104:01:10 - cmd:send, src:GestorArc, dst:GUI, msg:"Error-> La carpeta ya existe"

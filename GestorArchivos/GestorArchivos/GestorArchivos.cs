@@ -23,12 +23,12 @@ namespace GestorArchivos
             listener.Start();
 
             messages.Actions("{cmd:create, src:GUI, dst:GestorArc, msg:\"coso\"}");
-
-           
-
-            
-
             return 0;
+        }
+
+        public void stopGestorArc()
+        {
+            System.Environment.Exit(1);
         }
     }
 }

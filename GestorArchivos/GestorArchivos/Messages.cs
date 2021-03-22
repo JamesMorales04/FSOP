@@ -31,12 +31,8 @@ namespace GestorArchivos
         public void Actions(string msg)
         {
             string info = "";
+            string[] inmsg;
             string[] msgClean = msg.Replace("<EOF>", "").Replace("{", "").Replace("}", "").Split(',');
-
-            for (int i = 0; i < msgClean.Length; i++)
-            {
-                Console.WriteLine(msgClean[i]);
-            }
 
             string[] action = msgClean[0].Split(':');
             string[] dst = msgClean[2].Split(':');
@@ -44,29 +40,36 @@ namespace GestorArchivos
 
             if (dst[1] == "GestorArc")
             {
-                if (action[1] == "create")
+                switch (action[1])
                 {
-                    Console.WriteLine("hola");
-                    string[] inmsg = msgClean[3].Split('\"');
-                    info = file.createFolder(inmsg[1]);
-                    comunication.sendMessage(info, 8082);
+                    case "create":
+                        Console.WriteLine("hola");
+                        inmsg = msgClean[3].Split('\"');
+                        info = file.createFolder(inmsg[1]);
+                        comunication.sendMessage(info, 8082);
+                        break;
+                    case "delete":
+                        inmsg = msgClean[3].Split('\"');
+                        info = file.deleteFolder(inmsg[1]);
+                        comunication.sendMessage(info, 8082);
+                        break;
+                    case "send":
+                        inmsg = msgClean[3].Split('\"');
+                        inmsg = inmsg[1].Split('>');
 
+                        info = file.createFile(inmsg[1]);
+                        comunication.sendMessage(info, 8082);
+                        break;
+                    case "stop":
+                        inmsg = msgClean[3].Split('\"');
+                        file.createFolder(inmsg[1]);
+                        core.stopGestorArc();
+                        break;
                 }
-                else if (action[1] == "delete")
-                {
-                    string[] inmsg = msgClean[3].Split('\"');
-                    info = file.deleteFolder(inmsg[1]);
-                    comunication.sendMessage(info, 8082);
-                }
-                else if (action[1] == "send")
-                {
-                    string[] inmsg = msgClean[3].Split('\"');
-
-                    inmsg = inmsg[1].Split('>');
-
-                    info = file.createFile(inmsg[1]);
-                    comunication.sendMessage(info, 8082);
-                }
+            }
+            else
+            {
+                file.createFile(msg.Replace("<EOF>", "").Replace("{", "").Replace("}", ""));
             }
 
         }
@@ -93,28 +96,6 @@ namespace GestorArchivos
             }
             return msg;
         }
-
-        /* private void longMessage(string[] msgClean, string rawMsg)
-         {
-             switch (msgClean[2].Split(':')[1])
-             {
-                 case "GUI":
-                     comunication.sendMessage(rawMsg, 8081);
-                     break;
-                 case "GestorArc":
-                     comunication.sendMessage(rawMsg, 8082);
-                     break;
-                 case "kernel":
-                     //comunication.sendMessage(rawMsg, 8082);
-                     core.stopKernel();
-                     break;
-                 case "APP":
-                     comunication.sendMessage(rawMsg, 8083);
-                     break;
-                 default:
-                     break;
-             }
-         }*/
 
     }
 }
