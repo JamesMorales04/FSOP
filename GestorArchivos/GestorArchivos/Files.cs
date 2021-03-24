@@ -11,7 +11,7 @@ namespace GestorArchivos
     {
         public string createFile(string dato)
         {
-            string path = @"D:\Usuario\Universidad\FSOP\GestorArchivos\GestorArchivos\Log\Log.txt";
+            string path = @"C:\parcial2so\Log.txt";
             string msg;
             string data = DateTime.Now.ToLongDateString() + DateTime.Now.ToString("hh:mm:ss");
             try
@@ -30,7 +30,7 @@ namespace GestorArchivos
             catch (Exception)
             {
                 
-                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error-> Error al crear el carpeta\"}";
+                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error->Error al crear el carpeta\"}";
             }
             return msg;
 
@@ -38,7 +38,7 @@ namespace GestorArchivos
 
         public string createFolder(string name)
         {
-            string path = @"D:\Usuario\Universidad\FSOP\GestorArchivos\GestorArchivos\Folders\" + name;
+            string path = @"C:\parcial2so\" + name;
             string msg;
 
             try
@@ -53,7 +53,7 @@ namespace GestorArchivos
                 else
                 {
                     createFile("La carpeta " + name + " ya existe.");
-                    msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error-> La carpeta ya existe\"}";
+                    msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error->La carpeta ya existe\"}";
                 }
                 
 
@@ -61,14 +61,14 @@ namespace GestorArchivos
             catch (Exception)
             {
                 createFile("Error al crear la carpeta " + name );
-                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error-> Error al crear el carpeta\"}";
+                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error->Error al crear el carpeta\"}";
             }
             return msg;
         }
 
         public string deleteFolder(string name)
         {
-            string path = @"D:\Usuario\Universidad\FSOP\GestorArchivos\GestorArchivos\Folders\" + name;
+            string path = @"C:\parcial2so\" + name;
             string msg;
 
             try
@@ -80,7 +80,7 @@ namespace GestorArchivos
             catch (Exception)
             {
                 createFile("Error al borrar la carpeta " + name + ".");
-                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error-> Error al crear el carpeta\"}";
+                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error->Error al crear el carpeta\"}";
 
             }
             return msg;
