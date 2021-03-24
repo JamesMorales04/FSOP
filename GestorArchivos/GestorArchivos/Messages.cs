@@ -46,12 +46,12 @@ namespace GestorArchivos
                         Console.WriteLine("hola");
                         inmsg = msgClean[3].Split('\"');
                         info = file.createFolder(inmsg[1]);
-                        comunication.sendMessage(info, 8081);
+                        comunication.sendMessage(info, 8080);
                         break;
                     case "delete":
                         inmsg = msgClean[3].Split('\"');
                         info = file.deleteFolder(inmsg[1]);
-                        comunication.sendMessage(info, 8081);
+                        comunication.sendMessage(info, 8080);
                         break;
                     case "send":
                         inmsg = msgClean[3].Split('\"');
