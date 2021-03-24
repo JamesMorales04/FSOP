@@ -105,7 +105,10 @@ namespace GestorArchivos
                         }
                     }
 
-                    messages.Actions(data);
+                    if (data != "")
+                    {
+                        messages.Actions(data);
+                    }
 
                     byte[] msg = Encoding.ASCII.GetBytes(messages.Response());
 
