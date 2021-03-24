@@ -61,7 +61,7 @@ namespace GestorArchivos
                         break;
                     case "stop":
                         inmsg = msgClean[3].Split('\"');
-                        file.createFolder(inmsg[1]);
+                        file.createFile(inmsg[1]);
                         core.stopGestorArc();
                         break;
                 }
