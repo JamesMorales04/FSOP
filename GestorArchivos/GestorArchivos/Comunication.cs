@@ -105,7 +105,7 @@ namespace GestorArchivos
                         }
                     }
 
-                    if (data != "")
+                    if (data != "<EOF>")
                     {
                         messages.Actions(data);
                     }
