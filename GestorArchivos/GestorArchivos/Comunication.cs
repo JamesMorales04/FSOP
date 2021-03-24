@@ -47,8 +47,6 @@ namespace GestorArchivos
 
                     int bytesSent = sender.Send(msg);
 
-                    int bytesRec = sender.Receive(bytes);
-
 
                     sender.Shutdown(SocketShutdown.Both);
                     sender.Close();
