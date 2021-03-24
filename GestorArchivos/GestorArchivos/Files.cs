@@ -25,12 +25,12 @@ namespace GestorArchivos
                 sw.Close();
                 fs.Close();
 
-                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"OK\"}";
+                msg = "";
             }
             catch (Exception)
             {
                 
-                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error->Error al crear el carpeta\"}";
+                msg = "{cmd:send,src:GestorArc,dst:GUI,msg:\"Error->Error al crear el carpeta\"}";
             }
             return msg;
 
@@ -46,14 +46,14 @@ namespace GestorArchivos
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
-                    msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"OK\"}";
+                    msg = "{cmd:send,src:GestorArc,dst:GUI, msg:\"OK\"}";
                     createFile("La carpeta " + name+ " fue creada correctamente.");
 
                 }
                 else
                 {
                     createFile("La carpeta " + name + " ya existe.");
-                    msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error->La carpeta ya existe\"}";
+                    msg = "{cmd:send,src:GestorArc,dst:GUI,msg:\"Error->La carpeta ya existe\"}";
                 }
                 
 
@@ -61,7 +61,7 @@ namespace GestorArchivos
             catch (Exception)
             {
                 createFile("Error al crear la carpeta " + name );
-                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error->Error al crear el carpeta\"}";
+                msg = "{cmd:send,src:GestorArc,dst:GUI,msg:\"Error->Error al crear el carpeta\"}";
             }
             return msg;
         }
@@ -74,13 +74,13 @@ namespace GestorArchivos
             try
             {
                 Directory.Delete(path, true);
-                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"OK\"}";
+                msg = "{cmd:send,src:GestorArc,dst:GUI,msg:\"OK\"}";
                 createFile("La carpeta " + name + " fue eliminada correctamente.");
             }
             catch (Exception)
             {
                 createFile("Error al borrar la carpeta " + name + ".");
-                msg = "{cmd:send, src:GestorArc, dst:GUI, msg:\"Error->Error al crear el carpeta\"}";
+                msg = "{cmd:send,src:GestorArc,dst:GUI,msg:\"Error->Error al crear el carpeta\"}";
 
             }
             return msg;

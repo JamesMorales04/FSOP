@@ -84,13 +84,13 @@ namespace GestorArchivos
             switch (value)
             {
                 case 0:
-                    msg = "{codterm:0, msg:”OK”}";
+                    msg = "{codterm:0,msg:”OK”}";
                     break;
                 case 1:
-                    msg = "{codterm:1, msg:”0”}";
+                    msg = "{codterm:1,msg:”0”}";
                     break;
                 case 2:
-                    msg = "{codterm:2, msg:”Err”}";
+                    msg = "{codterm:2,msg:”Err”}";
                     break;
             }
             return msg;
